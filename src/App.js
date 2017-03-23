@@ -1,21 +1,40 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
+import Search from './Search';
+import Card from './Card';
+import filterCharacters from './filterCharacters';
+
 import './App.css';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+    state = {
+        filteredCharacters: filterCharacters('')
+    };
+
+    handleSearchChange = (e) => {
+        this.setState({
+            filteredCharacters: filterCharacters(e.target.value),
+        });
+    }
+
+    render() {
+        return (
+            <div className="container">
+                <Search onTextChange={this.handleSearchChange} />
+
+                {
+                    this.state.filteredCharacters.map((character, index) =>
+                        <Card
+                            key={index}
+                            name={character.name}
+                            image={character.image}
+                            description={character.description}
+                        />
+                    )
+                }
+            </div>
+        );
+    }
 }
 
 export default App;
