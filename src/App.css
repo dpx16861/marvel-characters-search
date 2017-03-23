@@ -1,24 +1,60 @@
-.App {
-  text-align: center;
+.search {
+    margin-top: 20px;
+    margin-bottom: 40px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.search-input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 20px;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #fff;
+    font-family: inherit;
+    font-size: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    outline: 0;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.search-input::-webkit-input-placeholder {
+    color: #fff;
 }
 
-.App-intro {
-  font-size: large;
+.search-input::-moz-placeholder {
+    color: #fff;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.card {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 200px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    background: rgba(58, 36, 9, 0.8);
+}
+
+.card-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background: #000 center / cover;
+}
+
+.card-content {
+    margin-left: 200px;
+    padding: 20px 40px;
+    font-size: 16px;
+}
+
+.card-title {
+    margin: 0 0 20px;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
 }
